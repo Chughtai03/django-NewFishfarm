@@ -1,0 +1,1013 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if IE 8 ]>
+<html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+
+<!-- Mirrored from fishtank.html.themeplayers.net/FISHtank/{% url 'home'%} by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 May 2021 06:05:23 GMT -->
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="description" content="FishTank">
+    <meta name="author" content="CreateIT">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>FishTank</title>
+
+    <script src="../cdn-cgi/apps/head/sxN6HgCn8v7CG45Nsym8imDXilk.js"></script><link rel="shortcut icon" href="{%static 'fishfarm/images/icon.ico'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'fishfarm/css/bootstrap.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'fishfarm/css/style.css'%}">
+
+
+    <!--[if lt IE 9]>
+    <script src="./{%static 'fishfarm/bootstrap/js/html5shiv.min.js"></script>
+    <script src="./{%static 'fishfarm/bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="{%static 'fishfarm/js/modernizr.custom.js'%}"></script>
+
+</head>
+<body class="cssAnimate">
+
+<!-- :mobile Menu: -->
+<div class="ct-menuMobile">
+    <ul class="ct-menuMobile-navbar">
+                <li><a href="{% url 'home'%}">Home</a></li>
+                <li><a href="{% url 'about'%}">About</a></li>
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" href="{% url 'home'%}" role="button" aria-expanded="true">
+                Pages <span class="caret ct-u-motiveBody"></span>
+            </a>
+            <ul class="dropdown-menu ct-dropdownMobile">
+                <li>
+                    <ul class="list-unstyled ct-dropdownMoblie-list">
+                        
+                        <li><a href="{% url 'ourteam'%}">Team</a></li>
+                        <li><a href="{% url 'myaccount'%}">My Account</a></li
+                        <li><a href="{% url 'login'%}">Login</a></li>
+                        <li><a href="{% url 'register'%}">Register</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li><a href="{% url 'contact'%}">Contact Us</a></li>
+    </ul>
+</div>
+
+<!--:mobile navbar: -->
+<div class="ct-navbarMobile">
+    <a class="navbar-brand" href="{% url 'home'%}"><img src="{%static 'fishfarm/images/logotext.png'%}" alt="FISHtank"> </a>
+    <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+</div>
+<div class="ct-navbarMobile ct-navbarMobile--header">
+    {% if user.is_authenticated %}
+       <li>
+         <a href="{% url 'login'%}">{{request.user}}</a> 
+       </li>
+      <li>
+         <a href="/logout">logout</a>
+       </li>
+    {% else %}
+      <li><a href="{% url 'login'%}">My Account</a></li>
+     {% endif %}
+
+</div>
+
+<!--:wrapper: -->
+<div id="ct-js-wrapper" class="ct-pageWrapper">
+
+<!-- :navbar: -->
+<nav class="navbar ct-navbar navbar-default yamm ct-navbar--fadeIn" role="navigation">
+    <div class="container">
+
+        <div class="ct-navbarContainer">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'home'%}"><img id="ct-js-logo"
+                        src="{%static 'fishfarm/images/logotext.png'%}" alt="FISHtank"></a> <!--  +  -->
+            </div>
+
+            <ul class="nav navbar-nav">
+                <li><a href="{% url 'home'%}">Home</a></li>
+                <li><a href="{% url 'about'%}">About</a></li>
+                <li role="presentation" class="dropdown">
+                    <a class="dropdown-toggle" href="{% url 'home'%}" role="button" aria-expanded="true">
+                        Pages <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+
+                            <div class="yamm-content">
+                                <div class="row">
+
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <h5 class="text-uppercase ct-fw-600 ct-menu-header">Pages</h5>
+                                                <ul class="list-unstyled ct-u-borderRightGrayLighter">
+
+                                                    
+                                                    <li><a href="{% url 'ourteam'%}">Team</a></li>
+                                                    <li><a href="{% url 'myaccount'%}">My Account</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <h5
+                                                    class="text-uppercase ct-fw-600 ct-menu-header ct-u-visibilityHidden">
+                                                    Header </h5>
+                                                <ul class="list-unstyled ct-u-borderRightGrayLighter">
+                                                    </li>
+                                                    <li><a href="{% url 'register'%}">Register</a></li>
+                                                    <li><a href="{% url 'login'%}">Login</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="{% url 'contact'%}">Contact Us</a></li>
+            </ul>
+
+             <ul class="nav navbar-nav yamm ct-navbar--right">
+                {% if user.is_authenticated %}
+                 <li>
+                    <a href="{% url 'login'%}">{{request.user}}</a> 
+                    
+                  </li>
+                  <li>
+                    <a href="/logout">logout</a>
+                  </li>
+                {% else %}
+                    <li><a href="{% url 'login'%}">My Account</a></li>
+                {% endif %}
+
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!-- main flexslider with white absolute container -->
+<section class="flexslider ct-flexslider--mainSlider ct-u-marginBoth0 ct-js-flexslider" data-pauseonaction="false" data-directionnav="true" data-animations="true" data-height="660"  data-controlnav="true"
+         data-animationloop="true" data-controlscontainer="ct-containerAbsolute" data-slideshow="false">
+    <ul class="slides">
+        <li data-bg="{%static 'fishfarm/images/intro-01.jpg'%}">
+            <div class="inner">
+                <img style="width:auto;" src="{%static 'fishfarm/images/diamondOverlay.png'%}" alt="Tropical Aquarium Fishtank">
+                <h3 class="text-center text-uppercase ct-fw-300 animated" data-fx="fadeInUp">Tropical <span class="ct-fw-500">Aquarium</span> Fishtank</h3>
+            </div>
+        </li>
+        <li data-bg="{%static 'fishfarm/images/intro-02.jpg'%}">
+            <div class="inner">
+                <img style="width:auto;" src="{%static 'fishfarm/images/diamondOverlay.png'%}" alt="Tropical Aquarium Fishtank">
+                <h3 class="text-center text-uppercase ct-fw-300 animated" data-fx="fadeInUp">Tropical <span class="ct-fw-500">Aquarium</span> Fishtank</h3>
+            </div>
+        </li>
+        <li data-bg="{%static 'fishfarm/images/intro-03.jpg'%}">
+            <div class="inner">
+                <img style="width:auto;" src="{%static 'fishfarm/images/diamondOverlay.png'%}" alt="Tropical Aquarium Fishtank">
+                <h3 class="text-center text-uppercase ct-fw-300 animated" data-fx="fadeInUp">Tropical <span class="ct-fw-500">Aquarium</span> Fishtank</h3>
+            </div>
+        </li>
+        <li data-bg="{%static 'fishfarm/images/intro-04.jpg'%}">
+            <div class="inner">
+                <img style="width:auto;" src="{%static 'fishfarm/images/diamondOverlay.png'%}" alt="Tropical Aquarium Fishtank">
+                <h3 class="text-center text-uppercase ct-fw-300 animated" data-fx="fadeInUp">Tropical <span class="ct-fw-500">Aquarium</span> Fishtank</h3>
+            </div>
+        </li>
+    </ul>
+    <div class="ct-containerAbsolute">
+        <!--<div class="ct-borderLeft"></div>-->
+        <!--<div class="ct-borderRight"></div>-->
+        <div class="ct-flexslider-progress">
+            <div class="ct-flexslider-progressBar"></div>
+        </div>
+        <div class="ct-containerAbsolute-inside"></div>
+    </div>
+</section>
+
+<!-- title and text above categories-->
+<div class="container ct-u-positionRelative">
+    <div class="ct-u-positionRelative">
+        <div class="ct-pageSectionHeader ct-offsetTop25 ct-u-borderBottomGrayLighter">
+            <h4 class="ct-fw-300 ct-u-size40 ct-u-paddingBottom20">A Necessity In Every <span>Aquarium's Life...</span></h4>
+            <div class="ct-u-paddingBottom40">
+                <p class="text-justify">FishTank offers the ultimate pet shop experience. It really is a paradise for pets and pet owners. We have all the pet supplies, pet food, toys and accessories you and your pet need at great value prices. All our store colleagues are fully trained in pet care and dedicated to the welfare of your animals, with most of them being experienced pet owners. So when  you are a new owner or an expert, our store colleagues are on hand to help you make the right choices. We also have a fantastic range of free, informative care for you to take away, offering help and advice on how to look after your pet.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- categories slider (columns inside needs rename) -->
+<section class="ct-u-paddingBottom100">
+<div class="container">
+    <div class="flexslider ct-flexslider--arrowType2 ct-js-flexslider ct-flexslider--margin25 ct-flexslider-col4" data-controlnav="false" data-directionnav="true" data-animationloop="false" data-minitems="1"
+         data-maxitems="4" data-move="1" data-itemwidth="267" data-itemmargin="25" data-slideshow="false">
+
+        <h4 class="ct-fw-600 ct-u-size24 ct-u-paddingBottom20 ct-u-paddingTop5 text-uppercase text-left ct-u-marginRight80">Categories</h4>
+        <ul class="slides">
+            <li>
+                <a href="{%static 'fishfarm/images/category-01-big.jpg'%}" class="ct-js-magnificPopupImage">
+                    <div class="ct-imageOverlay-container">
+                        <div class="ct-imageButton"></div>
+                        <img class="ct-u-motiveGrayLighter--bg" src="{%static 'fishfarm/images/category-01.png'%}" alt="Saltwater Fish">
+                    </div>
+                </a>
+                <p class="ct-u-size17 ct-fw-600 text-center ct-u-paddingTop15 text-uppercase">Saltwater Fish</p>
+            </li>
+            <li>
+                <a href="{%static 'fishfarm/images/category-02-big.jpg'%}" class="ct-js-magnificPopupImage">
+                    <div class="ct-imageOverlay-container">
+                        <div class="ct-imageButton"></div>
+                        <img class="ct-u-motiveGrayLighter--bg" src="{%static 'fishfarm/images/category-02.png'%}" alt="Freshwater Fish">
+                    </div>
+                </a>
+                <p class="ct-u-size17 ct-fw-600 text-center ct-u-paddingTop15 text-uppercase">Freshwater Fish</p>
+            </li>
+            <li>
+                <a href="{%static 'fishfarm/images/category-03-big.jpg'%}" class="ct-js-magnificPopupImage">
+                    <div class="ct-imageOverlay-container">
+                        <div class="ct-imageButton"></div>
+                    <img class="ct-u-motiveGrayLighter--bg" src="{%static 'fishfarm/images/category-03.png'%}" alt="Betta Shop">
+                </div></a>
+                <p class="ct-u-size17 ct-fw-600 text-center ct-u-paddingTop10 text-uppercase">Betta Shop</p>
+            </li>
+            <li>
+                <a href="{%static 'fishfarm/images/category-04-big.jpg'%}" class="ct-js-magnificPopupImage">
+                    <div class="ct-imageOverlay-container">
+                        <div class="ct-imageButton"></div>
+                    <img class="ct-u-motiveGrayLighter--bg" src="{%static 'fishfarm/images/category-04.png'%}" alt="Brackish Fish">
+                </div></a>
+                <p class="ct-u-size17 ct-fw-600 text-center ct-u-paddingTop15 text-uppercase">Brackish Fish</p>
+            </li>
+            <li>
+                <a href="{%static 'fishfarm/images/category-01-big.jpg'%}" class="ct-js-magnificPopupImage">
+                    <div class="ct-imageOverlay-container">
+                        <div class="ct-imageButton"></div>
+                    <img class="ct-u-motiveGrayLighter--bg" src="{%static 'fishfarm/images/category-01.png'%}" alt="Saltwater Fish">
+                </div></a>
+                <p class="ct-u-size17 ct-fw-600 text-center ct-u-paddingTop15 text-uppercase">Saltwater Fish</p>
+            </li>
+            <li>
+                <a href="{%static 'fishfarm/images/category-02-big.jpg'%}" class="ct-js-magnificPopupImage">
+                    <div class="ct-imageOverlay-container">
+                        <div class="ct-imageButton"></div>
+                    <img class="ct-u-motiveGrayLighter--bg" src="{%static 'fishfarm/images/category-02.png'%}" alt="Freshwater Fish">
+                </div></a>
+                <p class="ct-u-size17 ct-fw-600 text-center ct-u-paddingTop15 text-uppercase">Freshwater Fish</p>
+            </li>
+            <li>
+                <a href="{%static 'fishfarm/images/category-03-big.jpg'%}" class="ct-js-magnificPopupImage">
+                    <div class="ct-imageOverlay-container">
+                        <div class="ct-imageButton"></div>
+                    <img class="ct-u-motiveGrayLighter--bg" src="{%static 'fishfarm/images/category-03.png'%}" alt="Betta Shop">
+                </div></a>
+                <p class="ct-u-size17 ct-fw-600 text-center ct-u-paddingTop15 text-uppercase">Betta Shop</p>
+            </li>
+            <li>
+                <a href="{%static 'fishfarm/images/category-04-big.jpg'%}" class="ct-js-magnificPopupImage">
+                    <div class="ct-imageOverlay-container">
+                        <div class="ct-imageButton"></div>
+                    <img class="ct-u-motiveGrayLighter--bg" src="{%static 'fishfarm/images/category-04.png'%}" alt="Brackish Fish">
+                </div></a>
+                <p class="ct-u-size17 ct-fw-600 text-center ct-u-paddingTop15 text-uppercase">Brackish Fish</p>
+            </li>
+        </ul>
+    </div>
+</div>
+</section>
+
+<!-- tab section -->
+<section class="ct-u-motiveLight2--bg">
+    <div class="container">
+        <div class="ct-tabHeader ct-tabHeader--motive" role="tabpanel">
+            <ul class="list-unstyled text-uppercase ct-fw-600" role="tablist">
+                <li role="presentation" class="active"><div class="ct-tabBorder"><a href="#new-arrivals" role="tab" data-toggle="tab">New Arrivals</a></div><div class="mini-triangle"></div></li>
+                <li role="presentation"><div class="ct-tabBorder"><a href="#most-popular" role="tab" data-toggle="tab">Most popular</a></div><div class="mini-triangle"></div></li>
+                <li role="presentation"><div class="ct-tabBorder"><a href="#best-sellers"  role="tab" data-toggle="tab">Best sellers</a></div><div class="mini-triangle"></div></li>
+                <li role="presentation"><div class="ct-tabBorder"><a href="#most-top-rated"  role="tab" data-toggle="tab">Most Top Rated</a></div><div class="mini-triangle"></div></li>
+                <li role="presentation"><div class="ct-tabBorder"><a href="#most-viewed"  role="tab" data-toggle="tab">Most Viewed</a></div><div class="mini-triangle"></div></li>
+                <li role="presentation"><div class="ct-tabBorder"><a href="#all-types"  role="tab" data-toggle="tab">All types</a></div><div class="mini-triangle"></div></li>
+            </ul>
+        </div>
+
+        <!-- Tab panes -->
+        <div class="tab-content ct-u-paddingBottom80">
+            <div role="tabpanel" class="tab-pane active" id="new-arrivals">
+                <div class="row ct-u-paddingTop20">
+                    <div class="ct-product animated fadeIn">
+                        <div class="col-sm-4 col-xs-12 ct-u-paddingTop40">
+                            <a href="#"><div class="ct-imgWrapper">
+                                <div class="ct-product-circle ct-product-circle--sale ">Sale</div>
+                                <div class="ct-starRating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                </div>
+                                <div class="ct-shopIcon"><i class="fa fa-shopping-cart"></i></div>
+                                <h5 class="ct-imgWrapper-name ct-u-size24">Neon Red Rosy Barbs</h5>
+                                <img src="{%static 'fishfarm/images/tabs-fish-01.png'%}" alt="Neon Red Rosy Barbs">
+                                <div class="ct-imgWrapper-triangle"></div>
+                            </div></a>
+                            <p class="ct-u-paddingTop30">A beautiful young Rosy Barbs of undetermined gender. The Rosy Barbs and several other Aqua Barbs are usually for sale on this page.</p>
+                            <span class="ct-fw-600 ct-u-motiveDark ct-u-size30">$23.99</span>
+                            <a class="ct-fakeButton text-uppercase pull-right ct-u-motiveDark--bg">In stock</a>
+                        </div>
+                        <div class="col-sm-4 col-xs-12 ct-u-paddingTop40">
+                            <a href="#"><div class="ct-imgWrapper">
+                                <div class="ct-starRating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                </div>
+                                <div class="ct-shopIcon"><i class="fa fa-shopping-cart"></i></div>
+                                <h5 class="ct-imgWrapper-name ct-u-size24">Leopard Danio 3cm</h5>
+                                <img src="{%static 'fishfarm/images/tabs-fish-02.png'%}" alt="Leopard Danio">
+                                <div class="ct-imgWrapper-triangle"></div>
+                            </div></a>
+                            <p class="ct-u-paddingTop30">A beautiful young Rosy Barbs of undetermined gender. The Rosy Barbs and several other Aqua Barbs are usually for sale on this page.</p>
+                            <span class="ct-fw-600 ct-u-motiveDark ct-u-size30">$5.99</span>
+                            <a class="ct-fakeButton text-uppercase pull-right ct-u-motiveDark--bg">In stock</a>
+                        </div>
+                        <div class="col-sm-4 col-xs-12 ct-u-paddingTop40">
+                            <a href="#"><div class="ct-imgWrapper">
+                                <div class="ct-product-circle ct-product-circle--new ">New</div>
+                                <div class="ct-starRating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="ct-shopIcon"><i class="fa fa-shopping-cart"></i></div>
+                                <h5 class="ct-imgWrapper-name ct-u-size24">The Zebra Lizard</h5>
+                                <img src="{%static 'fishfarm/images/tabs-fish-03.png'%}" alt="The Zebra Lizard">
+                                <div class="ct-imgWrapper-triangle"></div>
+                            </div></a>
+                            <p class="ct-u-paddingTop30">A beautiful young Rosy Barbs of undetermined gender. The Rosy Barbs and several other Aqua Barbs are usually for sale on this page.</p>
+                            <span class="ct-fw-600 ct-u-motiveLight ct-u-size20 ct-u-lineThrough">$0.99</span><span class="ct-fw-600 ct-u-motiveDark ct-u-size30">$15.99</span>
+                            <a class="ct-fakeButton text-uppercase pull-right ct-u-motiveLight--bg">Out of stock</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="most-popular">
+                <div class="row ct-u-paddingTop20">
+                    <div class="ct-product animated fadeIn">
+                        <div class="col-sm-4 col-xs-12 ct-u-paddingTop40">
+                            <a href="#"><div class="ct-imgWrapper">
+                                <div class="ct-starRating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                </div>
+                                <div class="ct-shopIcon"><i class="fa fa-shopping-cart"></i></div>
+                                <h5 class="ct-imgWrapper-name ct-u-size24">Neon Red Rosy Barbs</h5>
+                                <img src="{%static 'fishfarm/images/tabs-fish-03.png'%}" alt="Neon Red Rosy Barbs">
+                                <div class="ct-imgWrapper-triangle"></div>
+                            </div></a>
+                            <p class="ct-u-paddingTop30">A beautiful young Rosy Barbs of undetermined gender. The Rosy Barbs and several other Aqua Barbs are usually for sale on this page.</p>
+                            <span class="ct-fw-600 ct-u-motiveDark ct-u-size30">$2.99</span>
+                            <a class="ct-fakeButton text-uppercase pull-right ct-u-motiveDark--bg">In stock</a>
+                        </div>
+                        <div class="col-sm-4 col-xs-12 ct-u-paddingTop40">
+                            <a href="#"><div class="ct-imgWrapper">
+                                <div class="ct-product-circle ct-product-circle--sale ">Sale</div>
+                                <div class="ct-starRating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                </div>
+                                <div class="ct-shopIcon"><i class="fa fa-shopping-cart"></i></div>
+                                <h5 class="ct-imgWrapper-name ct-u-size24">Neon Red Rosy Barbs</h5>
+                                <img src="{%static 'fishfarm/images/tabs-fish-02.png'%}" alt="Neon Red Rosy Barbs">
+                                <div class="ct-imgWrapper-triangle"></div>
+                            </div></a>
+                            <p class="ct-u-paddingTop30">A beautiful young Rosy Barbs of undetermined gender. The Rosy Barbs and several other Aqua Barbs are usually for sale on this page.</p>
+                            <span class="ct-fw-600 ct-u-motiveDark ct-u-size30">$15.99</span>
+                            <a class="ct-fakeButton text-uppercase pull-right ct-u-motiveDark--bg">In stock</a>
+                        </div>
+
+                        {% for data in product %}
+                        <div class="col-sm-4 col-xs-12 ct-u-paddingTop40">
+                            <a href="#"><div class="ct-imgWrapper">
+                                <div class="ct-product-circle ct-product-circle--new ">New</div>
+                                <div class="ct-starRating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                </div>
+                                <div class="ct-shopIcon"><a href="{% url 'cart_add' data.id %}"  class="fa fa-shopping-cart"></a></div>
+                                <h5 class="ct-imgWrapper-name ct-u-size24" color="Black">{{data.name}}</h5>
+                                <img src=images/{{data.image}} alt="Neon Red Rosy Barbs">
+                                <div class="ct-imgWrapper-triangle"></div>
+                            </div></a>
+                            <p class="ct-u-paddingTop30">{{data.description}}</p>
+                            <span class="ct-fw-600 ct-u-motiveLight ct-u-size20 ct-u-lineThrough">{{data.price}} /kg</span><span class="ct-fw-600 ct-u-motiveDark ct-u-size30">$15.99</span>
+                            <a  href="{% url 'cart_detail'  %}" class="ct-fakeButton text-uppercase pull-right ct-u-motiveLight--bg">view</a>
+                        </div>
+                       
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="best-sellers">
+                <div class="row ct-u-paddingTop20">
+                    <div class="ct-product animated fadeIn">
+                        <div class="col-sm-4 col-xs-12 ct-u-paddingTop40">
+                            <a href="#"><div class="ct-imgWrapper">
+                                <div class="ct-starRating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                </div>
+                                <div class="ct-shopIcon"><i class="fa fa-shopping-cart"></i></div>
+                                <h5 class="ct-imgWrapper-name ct-u-size24">Neon Red Rosy Barbs</h5>
+                                <img src="{%static 'fishfarm/images/tabs-fish-01.png'%}" alt="Neon Red Rosy Barbs">
+                                <div class="ct-imgWrapper-triangle"></div>
+                            </div></a>
+                            <p class="ct-u-paddingTop30">A beautiful young Rosy Barbs of undetermined gender. The Rosy Barbs and several other Aqua Barbs are usually for sale on this page.</p>
+                            <span class="ct-fw-600 ct-u-motiveDark ct-u-size30">$23.99</span>
+                            <a class="ct-fakeButton text-uppercase pull-right ct-u-motiveDark--bg">In stock</a>
+                        </div>
+                        {% for data in sproduct %}
+                        <div class="col-sm-4 col-xs-12 ct-u-paddingTop40">
+                            <a href="#"><div class="ct-imgWrapper">
+                                <div class="ct-product-circle ct-product-circle--sale ">Sale</div>
+                                <div class="ct-starRating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                </div>
+                                <div class="ct-shopIcon"><i class="fa fa-shopping-cart"></i></div>
+                                <h5 class="ct-imgWrapper-name ct-u-size24">{{data.name}}</h5>
+                                <img src=images/{{data.image}} alt="Neon Red Rosy Barbs">
+                                <div class="ct-imgWrapper-triangle"></div>
+                            </div></a>
+                            <p class="ct-u-paddingTop30">{{data.description}}</p>
+                            <span class="ct-fw-600 ct-u-motiveDark ct-u-size30">{{data.price}}</span>
+                            <a class="ct-fakeButton text-uppercase pull-right ct-u-motiveDark--bg">In stock</a>
+                        </div>
+                        {% endfor %}
+                        <div class="col-sm-4 col-xs-12 ct-u-paddingTop40">
+                            <a href="#"><div class="ct-imgWrapper">
+                                <div class="ct-product-circle ct-product-circle--new ">New</div>
+                                <div class="ct-starRating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                </div>
+                                <div class="ct-shopIcon"><i class="fa fa-shopping-cart"></i></div>
+                                <h5 class="ct-imgWrapper-name ct-u-size24">Neon Red Rosy Barbs</h5>
+                                <img src="{%static 'fishfarm/images/tabs-fish-01.png'%}" alt="Neon Red Rosy Barbs">
+                                <div class="ct-imgWrapper-triangle"></div>
+                            </div></a>
+                            <p class="ct-u-paddingTop30">A beautiful young Rosy Barbs of undetermined gender. The Rosy Barbs and several other Aqua Barbs are usually for sale on this page.</p>
+                            <span class="ct-fw-600 ct-u-motiveLight ct-u-size20 ct-u-lineThrough">$0.99</span><span class="ct-fw-600 ct-u-motiveDark ct-u-size30">$15.99</span>
+                            <a class="ct-fakeButton text-uppercase pull-right ct-u-motiveLight--bg">Out of stock</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="most-top-rated">
+                <div class="row ct-u-paddingTop20">
+                    <div class="ct-product animated fadeIn">
+                        <div class="col-sm-4 col-xs-12 ct-u-paddingTop40">
+                            <a href="#"><div class="ct-imgWrapper">
+                                <div class="ct-product-circle ct-product-circle--new ">New</div>
+                                <div class="ct-starRating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                </div>
+                                <div class="ct-shopIcon"><i class="fa fa-shopping-cart"></i></div>
+                                <h5 class="ct-imgWrapper-name ct-u-size24">Neon Red Rosy Barbs</h5>
+                                <img src="{%static 'fishfarm/images/tabs-fish-02.png'%}" alt="Neon Red Rosy Barbs">
+                                <div class="ct-imgWrapper-triangle"></div>
+                            </div></a>
+                            <p class="ct-u-paddingTop30">A beautiful young Rosy Barbs of undetermined gender. The Rosy Barbs and several other Aqua Barbs are usually for sale on this page.</p>
+                            <span class="ct-fw-600 ct-u-motiveDark ct-u-size30">$23.99</span>
+                            <a class="ct-fakeButton text-uppercase pull-right ct-u-motiveDark--bg">In stock</a>
+                        </div>
+                        <div class="col-sm-4 col-xs-12 ct-u-paddingTop40">
+                            <a href="#"><div class="ct-imgWrapper">
+                                <div class="ct-product-circle ct-product-circle--new ">New</div>
+                                <div class="ct-starRating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                </div>
+                                <div class="ct-shopIcon"><i class="fa fa-shopping-cart"></i></div>
+                                <h5 class="ct-imgWrapper-name ct-u-size24">Neon Red Rosy Barbs</h5>
+                                <img src="{%static 'fishfarm/images/tabs-fish-01.png'%}" alt="Neon Red Rosy Barbs">
+                                <div class="ct-imgWrapper-triangle"></div>
+                            </div></a>
+                            <p class="ct-u-paddingTop30">A beautiful young Rosy Barbs of undetermined gender. The Rosy Barbs and several other Aqua Barbs are usually for sale on this page.</p>
+                            <span class="ct-fw-600 ct-u-motiveDark ct-u-size30">$5.99</span>
+                            <a class="ct-fakeButton text-uppercase pull-right ct-u-motiveDark--bg">In stock</a>
+                        </div>
+                        <div class="col-sm-4 col-xs-12 ct-u-paddingTop40">
+                            <a href="#"><div class="ct-imgWrapper">
+                                <div class="ct-product-circle ct-product-circle--new ">New</div>
+                                <div class="ct-starRating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                </div>
+                                <div class="ct-shopIcon"><i class="fa fa-shopping-cart"></i></div>
+                                <h5 class="ct-imgWrapper-name ct-u-size24">Neon Red Rosy Barbs</h5>
+                                <img src="{%static 'fishfarm/images/tabs-fish-02.png'%}" alt="Neon Red Rosy Barbs">
+                                <div class="ct-imgWrapper-triangle"></div>
+                            </div></a>
+                            <p class="ct-u-paddingTop30">A beautiful young Rosy Barbs of undetermined gender. The Rosy Barbs and several other Aqua Barbs are usually for sale on this page.</p>
+                            <span class="ct-fw-600 ct-u-motiveLight ct-u-size20 ct-u-lineThrough">$0.99</span><span class="ct-fw-600 ct-u-motiveDark ct-u-size30">$15.99</span>
+                            <a class="ct-fakeButton text-uppercase pull-right ct-u-motiveLight--bg">Out of stock</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="most-viewed">
+                <div class="row ct-u-paddingTop20">
+                    <div class="ct-product animated fadeIn">
+                        <div class="col-sm-4 col-xs-12 ct-u-paddingTop40">
+                            <a href="#"><div class="ct-imgWrapper">
+                                <div class="ct-product-circle ct-product-circle--new ">New</div>
+                                <div class="ct-starRating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                </div>
+                                <div class="ct-shopIcon"><i class="fa fa-shopping-cart"></i></div>
+                                <h5 class="ct-imgWrapper-name ct-u-size24">Neon Red Rosy Barbs</h5>
+                                <img src="{%static 'fishfarm/images/tabs-fish-02.png'%}" alt="Neon Red Rosy Barbs">
+                                <div class="ct-imgWrapper-triangle"></div>
+                            </div></a>
+                            <p class="ct-u-paddingTop30">A beautiful young Rosy Barbs of undetermined gender. The Rosy Barbs and several other Aqua Barbs are usually for sale on this page.</p>
+                            <span class="ct-fw-600 ct-u-motiveDark ct-u-size30">$23.99</span>
+                            <a class="ct-fakeButton text-uppercase pull-right ct-u-motiveDark--bg">In stock</a>
+                        </div>
+                        <div class="col-sm-4 col-xs-12 ct-u-paddingTop40">
+                            <a href="#"><div class="ct-imgWrapper">
+                                <div class="ct-product-circle ct-product-circle--sale ">Sale</div>
+                                <div class="ct-starRating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                </div>
+                                <div class="ct-shopIcon"><i class="fa fa-shopping-cart"></i></div>
+                                <h5 class="ct-imgWrapper-name ct-u-size24">Neon Red Rosy Barbs</h5>
+                                <img src="{%static 'fishfarm/images/tabs-fish-03.png'%}" alt="Neon Red Rosy Barbs">
+                                <div class="ct-imgWrapper-triangle"></div>
+                            </div></a>
+                            <p class="ct-u-paddingTop30">A beautiful young Rosy Barbs of undetermined gender. The Rosy Barbs and several other Aqua Barbs are usually for sale on this page.</p>
+                            <span class="ct-fw-600 ct-u-motiveDark ct-u-size30">$5.99</span>
+                            <a class="ct-fakeButton text-uppercase pull-right ct-u-motiveDark--bg">In stock</a>
+                        </div>
+                        <div class="col-sm-4 col-xs-12 ct-u-paddingTop40">
+                            <a href="#"><div class="ct-imgWrapper">
+                                <div class="ct-product-circle ct-product-circle--sale ">Sale</div>
+                                <div class="ct-starRating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                </div>
+                                <div class="ct-shopIcon"><i class="fa fa-shopping-cart"></i></div>
+                                <h5 class="ct-imgWrapper-name ct-u-size24">Neon Red Rosy Barbs</h5>
+                                <img src="{%static 'fishfarm/images/tabs-fish-03.png'%}" alt="Neon Red Rosy Barbs">
+                                <div class="ct-imgWrapper-triangle"></div>
+                            </div></a>
+                            <p class="ct-u-paddingTop30">A beautiful young Rosy Barbs of undetermined gender. The Rosy Barbs and several other Aqua Barbs are usually for sale on this page.</p>
+                            <span class="ct-fw-600 ct-u-motiveLight ct-u-size20 ct-u-lineThrough">$0.99</span><span class="ct-fw-600 ct-u-motiveDark ct-u-size30">$15.99</span>
+                            <a class="ct-fakeButton text-uppercase pull-right ct-u-motiveLight--bg">Out of stock</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="all-types">
+                <div class="row ct-u-paddingTop20">
+                    <div class="ct-product animated fadeIn">
+                        <div class="col-sm-4 col-xs-12 ct-u-paddingTop40">
+                            <a href="#"><div class="ct-imgWrapper">
+                                <div class="ct-product-circle ct-product-circle--sale">Sale</div>
+                                <div class="ct-starRating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                </div>
+                                <div class="ct-shopIcon"><i class="fa fa-shopping-cart"></i></div>
+                                <h5 class="ct-imgWrapper-name ct-u-size24">Neon Red Rosy Barbs</h5>
+                                <img src="{%static 'fishfarm/images/tabs-fish-01.png'%}" alt="Neon Red Rosy Barbs">
+                                <div class="ct-imgWrapper-triangle"></div>
+                            </div></a>
+                            <p class="ct-u-paddingTop30">A beautiful young Rosy Barbs of undetermined gender. The Rosy Barbs and several other Aqua Barbs are usually for sale on this page.</p>
+                            <span class="ct-fw-600 ct-u-motiveDark ct-u-size30">$23.99</span>
+                            <a class="ct-fakeButton text-uppercase pull-right ct-u-motiveDark--bg">In stock</a>
+                        </div>
+                        <div class="col-sm-4 col-xs-12 ct-u-paddingTop40">
+                            <a href="#"><div class="ct-imgWrapper">
+                                <div class="ct-product-circle ct-product-circle--sale ">Sale</div>
+                                <div class="ct-starRating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                </div>
+                                <div class="ct-shopIcon"><i class="fa fa-shopping-cart"></i></div>
+                                <h5 class="ct-imgWrapper-name ct-u-size24">Neon Red Rosy Barbs</h5>
+                                <img src="{%static 'fishfarm/images/tabs-fish-01.png'%}" alt="Neon Red Rosy Barbs">
+                                <div class="ct-imgWrapper-triangle"></div>
+                            </div></a>
+                            <p class="ct-u-paddingTop30">A beautiful young Rosy Barbs of undetermined gender. The Rosy Barbs and several other Aqua Barbs are usually for sale on this page.</p>
+                            <span class="ct-fw-600 ct-u-motiveDark ct-u-size30">$5.99</span>
+                            <a class="ct-fakeButton text-uppercase pull-right ct-u-motiveDark--bg">In stock</a>
+                        </div>
+                        <div class="col-sm-4 col-xs-12 ct-u-paddingTop40">
+                            <a href="#"><div class="ct-imgWrapper">
+                                <div class="ct-product-circle ct-product-circle--sale ">Sale</div>
+                                <div class="ct-starRating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                    <i class="fa fa-star fa-star-empty"></i>
+                                </div>
+                                <div class="ct-shopIcon"><i class="fa fa-shopping-cart"></i></div>
+                                <h5 class="ct-imgWrapper-name ct-u-size24">Neon Red Rosy Barbs</h5>
+                                <img src="{%static 'fishfarm/images/tabs-fish-01.png'%}" alt="Neon Red Rosy Barbs">
+                                <div class="ct-imgWrapper-triangle"></div>
+                            </div></a>
+                            <p class="ct-u-paddingTop30">A beautiful young Rosy Barbs of undetermined gender. The Rosy Barbs and several other Aqua Barbs are usually for sale on this page.</p>
+                            <span class="ct-fw-600 ct-u-motiveLight ct-u-size20 ct-u-lineThrough">$0.99</span><span class="ct-fw-600 ct-u-motiveDark ct-u-size30">$15.99</span>
+                            <a class="ct-fakeButton text-uppercase pull-right ct-u-motiveLight--bg">Out of stock</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ct-promoSection needed for mobile resize-->
+<section class="ct-promoSection ct-u-paddingBottom100">
+<div class="container">
+    <img class="ct-u-paddingBoth30" src="{%static 'fishfarm/images/promo.png'%}" alt="Patrick Star">
+    <div class="ct-pageSectionHeader ct-fw-300">
+        <h4 class="ct-fw-300 ct-u-marginBottom0">We Have <span>New Accessories</span></h4>
+         <h2><span>(+92)</span> 3076928772</h2>
+    </div>
+</div>
+</section>
+
+<!--:debug: number Columns -->
+<!-- fish collections -->
+
+<section class="ct-u-paddingTop50">
+<div class="container">
+    <div class="row ct-collections">
+        <div class="col-md-4 ct-u-paddingBoth50">
+            <div class="ct-pageSectionHeader"><h3>FISH <span>COLLECTIONS</span></h3>
+                 <a href="#">
+                     <h4 class="ct-fw-300 ct-u-motiveLight ct-u-displayInline">See all Species</h4>
+                     <div class="ct-ListDiamond"><i class="fa fa-chevron-right"></i></div>
+                 </a>
+            </div>
+        </div>
+        <div class="col-md-8 ct-u-paddingBoth30">
+            <div class="ct-flip-wrapper">
+
+                <div class="col-sm-3 col-xs-6">
+                    <a href="404.html">
+                    <div class="ct-flip-container" >
+                        <div class="ct-flipper">
+                            <div class="ct-front"><img src="{%static 'fishfarm/images/collection-01.png'%}" alt="Mini Burittowater Tacoshark"></div>
+                            <div class="ct-back motive-bg"><h5>Mini Burittowater Tacoshark</h5></div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <a href="404.html">
+                    <div class="ct-flip-container" >
+                        <div class="ct-flipper">
+                            <div class="ct-front"><img src="{%static 'fishfarm/images/collection-03.png'%}" alt="The African Cichlid"></div>
+                            <div class="ct-back motive-bg"><h5>The African Cichlid</h5></div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <a href="404.html">
+                    <div class="ct-flip-container" >
+                        <div class="ct-flipper">
+                            <div class="ct-front"><img src="{%static 'fishfarm/images/collection-02.png'%}" alt="Junglewater Predator"></div>
+                            <div class="ct-back motive-bg"><h5>Junglewater Predator</h5></div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <a href="404.html">
+                    <div class="ct-flip-container" >
+                        <div class="ct-flipper">
+                            <div class="ct-front"><img src="{%static 'fishfarm/images/collection-04.png'%}" alt="Scary Fish"></div>
+                            <div class="ct-back motive-bg"><h5>Scary Fish(?)</h5></div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- needs rename STAT -->
+        <div class="col-md-12 ct-slideInRightSection pull-right ct-u-motiveLight2--bg ct-u-marginBoth50 animated" data-fx="bounceInRight ct-show">
+            <div class="row ct-u-borderMotiveBottom">
+                <div class="col-sm-3 ct-u-clearPadding"><img class="ct-img100" src="{%static 'fishfarm/images/PetOfTheWeek.png'%}" alt="Gourami"></div>
+                <div class="col-sm-9 ct-u-motiveLight2--bg ct-u-paddingTop20 ct-u-paddingBottom10">
+                    <h4 class="ct-u-motiveDark ct-u-marginBottom10">Fish Of The Week</h4>
+                    <span class="motive text-uppercase ct-fw-600 ct-u-size18">Gourami Fish</span>
+                    <p class="ct-u-marginBottom10">Aliquam nec hendrerit ipsum, ac volutpat nulla. Nulla semper dignissim mauris, eget lobortis est finibus ac. Aliquam felis etau liberiomui, lacinia in facilisis quis, portitor id augue.
+                        Donec sem ante, pellentesque eu dapibus eu, auctor quis magna. </p>
+                    <a class="btn btn-motive text-uppercase ct-u-marginTop10"><span>Purchase this fish now  <i class="fa fa-location-arrow"></i></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+
+<!-- latest photo component -->
+<section class="ct-u-paddingBottom80">
+<div class="container">
+    <div class="row">
+
+        <div class="ct-sectionHeader">
+            <h2>Latest Photos</h2>
+            <h3>Types of Species</h3>
+        </div>
+
+        <div class="col-md-4 ct-u-paddingBottom30 ct-photoGallery-small">
+
+            <div class="row">
+                <div class="col-md-12 col-sm-4 col-xs-12">
+                    <a href="{%static 'fishfarm/images/small-photo-01-big.png'%}" class="ct-js-magnificPopupImage">
+                        <div class="ct-imageOverlay-container ct-u-marginBottom30 animated" data-fx="flipInX">
+                            <div class="ct-imageButton"></div>
+                        <img src="{%static 'fishfarm/images/small-photo-01.png'%}" alt="Small Image">
+                    </div></a>
+                </div>
+                <div class="col-md-12 col-sm-4 col-xs-12">
+                    <a href="{%static 'fishfarm/images/small-photo-02-big.png'%}" class="ct-js-magnificPopupImage">
+                        <div class="ct-imageOverlay-container ct-u-marginBottom30 animated" data-fx="flipInX">
+                            <div class="ct-imageButton"></div>
+                        <img src="{%static 'fishfarm/images/small-photo-02.png'%}" alt="Small Image">
+                    </div></a>
+                </div>
+                <div class="col-md-12 col-sm-4 col-xs-12">
+                    <a href="{%static 'fishfarm/images/small-photo-03-big.png'%}" class="ct-js-magnificPopupImage">
+                        <div class="ct-imageOverlay-container animated" data-fx="flipInX">
+                            <div class="ct-imageButton"></div>
+                            <img src="{%static 'fishfarm/images/small-photo-03.png'%}" alt="Small Image">
+                         </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8 ct-u-paddingBottom30 ct-photoGallery-large">
+            <a href="{%static 'fishfarm/images/large-photo-big.png'%}" class="ct-js-magnificPopupImage">
+                <div class="ct-imageOverlay-container">
+                    <div class="ct-imageButton"></div>
+                    <div class="ct-imageOverlay ct-img100">
+                        <div class="ct-imageOverlay-text">
+                            <h3 class="text-center text-uppercase ct-fw-300">LONG FIN</h3>
+                            <h3 class="text-center text-uppercase ct-fw-300"><span class="ct-fw-500">ZEBRA DAN</span></h3>
+                            <h3 class="text-center text-uppercase ct-fw-300">FISH</h3>
+                        </div>
+                    </div>
+                    <img src="{%static 'fishfarm/images/large-photo.png'%}" alt="Large Image">
+                </div>
+            </a>
+        </div>
+    </div>
+    <a class="btn btn-motive text-uppercase ct-u-marginTop20"><span>See more  <i class="fa fa-location-arrow"></i></span></a>
+</div>
+</section>
+
+<!-- team members slider -->
+<section class="ct-u-motiveLight2--bg ct-u-paddingTop50 ct-u-paddingBottom60">
+    <div class="container">
+        <div class="flexslider ct-flexslider--arrowType2 ct-js-flexslider ct-flexslider--margin25 ct-flexslider-col4" data-controlnav="false" data-directionnav="true" data-animationloop="false" data-slideshow="false"
+             data-maxitems="4" data-move="1" data-itemwidth="267" data-itemmargin="25">
+            <h4 class="ct-fw-600 ct-u-paddingBottom30 text-uppercase ct-u-size24 ct-u-marginRight80">Our Team Members</h4>
+            <ul class="slides">
+                {% for data in team %}
+                <li>
+                    <a href="#" class="ct-teamMember ct-u-backgroundWhite">
+                        <img src=images/{{data.image}} alt="Team Member">
+                        <div class="ct-teamMember--bg ct-u-paddingBoth20">
+                            <p class="text-uppercase text-center ct-fw-600">{{data.name}}</p>
+                            <p class="ct-fw-400 text-center">{{data.status}}</p>
+                        </div>
+                        <div class="ct-u-motiveDark">
+                            <p class="text-center ct-u-paddingTop15 ct-u-paddingBottom60">{{data.description}}</p>
+                            <div class="ct-curlPlus-wrapper">
+                                <div class="ct-curlPlus ct-curlPlus--topleft"></div>
+                                <div class="ct-curlPlus ct-curlPlus--bottomright"></div>
+                                <span>+</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- testimonials -->
+
+
+<!-- ct class needed for background img  - logoslider - -->
+
+
+<section class="ct-footer-list ct-u-paddingBoth50">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-xs-12">
+                <div class="ct-list ct-list--dark">
+                    <h5 class="text-uppercase ct-fw-600 ct-u-motiveBody">Information</h5>
+                    <ul class="ct-u-paddingTop10">
+                        <li><a href="#"><div class="ct-listTable"><div class="ct-ListDiamond"><i class="fa fa-chevron-right"></i></div></div><span>Specials</span></a></li>
+                        <li><a href="#"><div class="ct-listTable"><div class="ct-ListDiamond"><i class="fa fa-chevron-right"></i></div></div><span>New products</span></a></li>
+                        <li><a href="#"><div class="ct-listTable"><div class="ct-ListDiamond"><i class="fa fa-chevron-right"></i></div></div><span>Best Sellers</span></a></li>
+                        <li><a href="#"><div class="ct-listTable"><div class="ct-ListDiamond"><i class="fa fa-chevron-right"></i></div></div><span>Most Top Rated</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <div class="ct-list ct-list--dark">
+                    <h5 class="text-uppercase ct-fw-600 ct-u-motiveBody">My Account</h5>
+                    <ul class="ct-u-paddingTop10">
+                        <li><a href="#"><div class="ct-listTable"><div class="ct-ListDiamond"><i class="fa fa-chevron-right"></i></div></div><span>My Orders</span></a></li>
+                        <li><a href="#"><div class="ct-listTable"><div class="ct-ListDiamond"><i class="fa fa-chevron-right"></i></div></div><span>My Personal Info</span></a></li>
+                        <li><a href="#"><div class="ct-listTable"><div class="ct-ListDiamond"><i class="fa fa-chevron-right"></i></div></div><span>My Account</span></a></li>
+                        <li><a href="#"><div class="ct-listTable"><div class="ct-ListDiamond"><i class="fa fa-chevron-right"></i></div></div><span>My Addresses</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <div class="ct-list ct-list--dark">
+                    <h5 class="text-uppercase ct-fw-600 ct-u-motiveBody">Follow Us</h5>
+                    <ul class="ct-u-paddingTop10">
+                        <li><a href="https://www.facebook.com/createITpl"><div class="ct-listTable"><div class="ct-ListDiamond"><i class="fa fa-facebook"></i></div></div><span>Facebook</span></a></li>
+                        <li><a href="https://twitter.com/createitpl"><div class="ct-listTable"><div class="ct-ListDiamond"><i class="fa fa-twitter"></i></div></div><span>Twitter</span></a></li>
+                        <li><a href="#"><div class="ct-listTable"><div class="ct-ListDiamond"><i class="fa fa-rss"></i></div></div><span>RSS</span></a></li>
+                        <li><a href="#"><div class="ct-listTable"><div class="ct-ListDiamond"><i class="fa fa-linkedin"></i></div></div><span>Linkedin</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <div class="ct-list ct-list--dark">
+                    <h5 class="text-uppercase ct-fw-600 ct-u-motiveBody">Contact Us</h5>
+                    <ul class="ct-u-paddingTop10">
+                        <li>
+                            <div class="ct-listTable">
+                                <div class="ct-ListDiamond"><i class="fa fa-home"></i></div>
+                            </div><span>Street 2, Number 39 ,Chichawatni.</span>
+                        </li>
+                        <li>
+                            <div class="ct-listTable">
+                                <div class="ct-ListDiamond"><i class="fa fa-phone"></i></div>
+                            </div><span>(+92)3076928772</span>
+                        </li>
+                        <li><a href="#">
+                                <div class="ct-listTable">
+                                    <div class="ct-ListDiamond"><i class="fa fa-envelope"></i></div>
+                                </div><span>sohaibjutt6162 @gmail.com</span>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- footer -->
+<footer class="ct-footer">
+    <div class="container">
+        <a href="http://outsourcing.createit.pl/"><p class="ct-u-motiveDark ct-u-paddingBoth10 ct-u-size14 ct-fw-600">COPYRIGHT © createIT 2014</p></a>
+    </div>
+</footer>
+
+<!-- Scroll Up Button -->
+<a class="ct-ScrollUpButton ct-js-btnScrollUp" href="#"><span class="ct-ScrollUpButton--motive"><i class="fa fa-angle-up"></i></span></a>
+
+</div>
+
+<!-- JavaScripts -->
+
+<script src="{%static 'fishfarm/js/jquery.min.js'%}"></script>
+<script src="{%static 'fishfarm/bootstrap/js/bootstrap.min.js'%}"></script>
+<script src="{%static 'fishfarm/js/jquery.easing.1.3.js'%}"></script>
+<script src="{%static 'fishfarm/js/device.min.js'%}"></script>
+<script src="{%static 'fishfarm/js/jquery.browser.min.js'%}"></script>
+<script src="{%static 'fishfarm/js/snap.min.js'%}"></script>
+<script src="{%static 'fishfarm/js/jquery.appear.js'%}"></script>
+
+<script src="{%static 'fishfarm/js/logos/logo-FISHtank.js'%}"></script><script src="{%static 'fishfarm/js/logos/logo-FISHtank.js'%}"></script><script src="{%static 'fishfarm/js/main.js'%}"></script>
+
+<script src="{%static 'fishfarm/js/ct-mediaSection/jquery.stellar.min.js'%}"></script>
+<script src="{%static 'fishfarm/js/ct-mediaSection/init.js'%}"></script>
+
+<script src="{%static 'fishfarm/js/magnific-popup/jquery.magnific-popup.min.js'%}"></script>
+<script src="{%static 'fishfarm/js/magnific-popup/init.js'%}"></script>
+
+<script src="{%static 'fishfarm/js/flexslider/jquery.flexslider-min.js'%}"></script>
+<script src="{%static 'fishfarm/js/flexslider/init.js'%}"></script>
+
+<script src="{%static 'fishfarm/js/less.min.js'%}"></script>
+
+<!-- switcher -->
+<script src="{%static 'fishfarm/js/demo.js'%}"></script>
+<script type="text/javascript">
+    $('head').append('<link rel="stylesheet" type="text/css" href="../demo/css/demo.css">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="http://fishtank.html.themeplayers.net/demo/generator.php">');
+</script>
+
+<!--<link rel="stylesheet" type="text/css" href="../demo/css/demo.css">-->
+<!--<link rel="stylesheet" type="text/css" href="../demo/generator.php">-->
+<div id="stylechooser">
+
+   
+
+   
+
+    <!--<div class="easyBox">-->
+        <!--<div class="mkSpace">-->
+            <!--<div class="title">-->
+                <!--<p class="light h5">Background <strong>Color</strong></p>-->
+            <!--</div>-->
+            <!--<ul class="demoList clearfix">-->
+                <!--<li><a href="#" title="default" data-value='default'><span class="demoColor" style="background:#ce0000;"></span></a></li>-->
+                <!--<li><a href="#" title="orange" data-value="orange"><span class="demoColor" style="background:#ff7f00;"></span></a></li>-->
+                <!--<li><a href="#" title="yellow" data-value="yellow"><span class="demoColor" style="background:#ffd600;"></span></a></li>-->
+                <!--<li><a href="#" title="green" data-value="green"><span class="demoColor" style="background:#8dc153;"></span></a></li>-->
+                <!--<li><a href="#" title="cyan" data-value="cyan"><span class="demoColor" style="background:#22cbe8;"></span></a></li>-->
+                <!--<li><a href="#" title="red" data-value="blue"><span class="demoColor" style="background:#2b8be9;"></span></a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+
+   
+
+</div>
+<!-- end switcher -->
+</body>
+
+<!-- Mirrored from fishtank.html.themeplayers.net/FISHtank/{% url 'home'%} by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 May 2021 06:12:24 GMT -->
+</html>

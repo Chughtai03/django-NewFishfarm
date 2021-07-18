@@ -1,0 +1,328 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if IE 8 ]>
+<html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<!-- Mirrored from fishtank.html.themeplayers.net/FISHtank/features-tables.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 May 2021 06:18:50 GMT -->
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="description" content="FishTank">
+    <meta name="author" content="CreateIT">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Cart</title>
+
+    <script src="../cdn-cgi/apps/head/sxN6HgCn8v7CG45Nsym8imDXilk.js"></script>
+    <link rel="shortcut icon" href="{%static 'fishfarm/images/icon.ico'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'fishfarm/css/bootstrap.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'fishfarm/css/style.css'%}">
+
+
+    <!--[if lt IE 9]>
+    <script src="./{%static 'fishfarm/bootstrap/js/html5shiv.min.js'%}"></script>
+    <script src="./{%static 'fishfarm/bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="{%static 'fishfarm/js/modernizr.custom.js'%}"></script>
+
+</head>
+
+<body class="cssAnimate">
+
+    <!-- :mobile Menu: -->
+    <div class="ct-menuMobile">
+        <ul class="ct-menuMobile-navbar">
+                    <li><a href="{% url 'home'%}">Home</a></li>
+                    <li><a href="{% url 'about'%}">About</a></li>
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" href="{% url 'home'%}" role="button" aria-expanded="true">
+                    Pages <span class="caret ct-u-motiveBody"></span>
+                </a>
+                <ul class="dropdown-menu ct-dropdownMobile">
+                    <li>
+                        <ul class="list-unstyled ct-dropdownMoblie-list">
+                            
+                            <li><a href="{% url 'ourteam'%}">Team</a></li>
+                            <li><a href="{% url 'myaccount'%}">My Account</a></li
+                            <li><a href="{% url 'login'%}">Login</a></li>
+                            <li><a href="{% url 'register'%}">Register</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+    
+            <li><a href="{% url 'contact'%}">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!--:mobile navbar: -->
+    <div class="ct-navbarMobile">
+        <a class="navbar-brand" href="{% url 'home'%}"><img src="{%static 'fishfarm/images/logo.png'%}"
+                alt="FISHtank"> </a>
+        <button type="button" class="navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+   <div class="ct-navbarMobile ct-navbarMobile--header">
+        {% if user.is_authenticated %}
+           <li>
+             <a href="{% url 'login'%}">{{request.user}}</a> 
+           </li>
+          <li>
+             <a href="/logout">logout</a>
+           </li>
+        {% else %}
+          <li><a href="{% url 'login'%}">My Account</a></li>
+         {% endif %}
+
+    </div>
+
+    <!--:wrapper: -->
+    <div id="ct-js-wrapper" class="ct-pageWrapper">
+
+        <!-- :navbar: -->
+        <nav class="navbar ct-navbar navbar-default yamm ct-navbar--fadeIn" role="navigation">
+            <div class="container">
+        
+                <div class="ct-navbarContainer">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="{% url 'home'%}"><img id="ct-js-logo"
+                                src="{%static 'fishfarm/images/logotext.png'%}" alt="FISHtank"></a> <!--  +  -->
+                    </div>
+        
+                    <ul class="nav navbar-nav">
+                        <li><a href="{% url 'home'%}">Home</a></li>
+                        <li><a href="{% url 'about'%}">About</a></li>
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" href="{% url 'home'%}" role="button" aria-expanded="true">
+                                Pages <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+        
+                                    <div class="yamm-content">
+                                        <div class="row">
+        
+                                            <div class="col-sm-12">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <h5 class="text-uppercase ct-fw-600 ct-menu-header">Pages</h5>
+                                                        <ul class="list-unstyled ct-u-borderRightGrayLighter">
+        
+                                                            
+                                                            <li><a href="{% url 'ourteam'%}">Team</a></li>
+                                                            <li><a href="{% url 'myaccount'%}">My Account</a></li>
+                                                          
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <h5
+                                                            class="text-uppercase ct-fw-600 ct-menu-header ct-u-visibilityHidden">
+                                                            Header </h5>
+                                                        <ul class="list-unstyled ct-u-borderRightGrayLighter">
+                                                            <li><a href="{% url 'login'%}">Login</a></li>
+                                                            <li><a href="{% url 'register'%}">Register</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+        
+                        <li><a href="{% url 'contact'%}">Contact Us</a></li>
+                    </ul>
+        
+                    <ul class="nav navbar-nav yamm ct-navbar--right">
+                        {% if user.is_authenticated %}
+                         <li>
+                            <a href="{% url 'login'%}">{{request.user}}</a> 
+                            
+                          </li>
+                          <li>
+                            <a href="/logout">logout</a>
+                          </li>
+                        {% else %}
+                            <li><a href="{% url 'login'%}">My Account</a></li>
+                        {% endif %}
+        
+                    </ul>
+                </div>
+        
+            </div>
+        </nav>
+        <!--:header: -->
+        <header class="ct-headerMotive">
+            <div class="container">
+                <p class="text-uppercase"><a href="{% url 'home'%}">Home</a><i class="fa fa-chevron-right"></i>Tables
+                </p>
+            </div>
+        </header>
+
+
+
+
+        <div class="ct-u-paddingBoth80">
+
+            <div class="container">
+
+                <section>
+
+                    <div class="ct-sectionHeader ct-u-paddingBottom10">
+                        <h2>Simple Table</h2>
+                        <h3>Beautifuly styled</h3>
+                    </div>
+                    {% load cart_tag %}
+
+                Total Length :: {{request.session.cart|length}}
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Picture
+                                </th>
+                                <th>
+                                    Price
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>
+                                    Total
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for key,value in request.session.cart.items %}
+                            <tr>
+                                <td>
+                                    {{forloop.counter}}
+                                </td>
+                                <td>
+                                    {{value.name}}
+                                </td>
+                                <td>
+                                    <img src="{{value.image}}" height="200" width="200">
+                                </td>
+                                <td>
+                                    {{value.price}}
+                                    
+                                </td>
+                                <td>
+                                    <span>
+                                            <div>
+                                                <a href="{% url 'item_increment' value.product_id %}" class="btn btn-info">
+                                                    + </a>
+                                            </div>
+                                            <div>
+                                                <p>{{value.quantity}}</p>
+                                            </div>
+                                        {% if value.quantity == 1 %}
+                                            <div>
+                                                <a href="#" class="btn btn-info"> - </a>
+                                            </div>
+
+                                        {% else %}
+                                            <div>
+                                                <a href="{% url 'item_decrement' value.product_id %}" class="btn btn-info"> - </a>
+                                            </div>
+                                        {% endif %}
+                                    </span>
+                                </td>
+
+                                <td>
+                                    {{ value.price|multiply:value.quantity }}
+
+                                </td>
+                            </tr>
+                            {% endfor %}
+
+
+                        </tbody>
+                    </table>
+                    <form method="post" class="order-form" action="{% url 'store' %}" >
+                        {% csrf_token %}
+                     
+                         <input type="submit" value="Retain">
+                     
+                     </form>
+                </section>
+
+
+            </div>
+
+    </div>
+
+
+    <!-- ct class needed for background img  - logoslider - -->
+
+    <!-- footer -->
+    <footer class="ct-u-motiveDark2--bg">
+        <div class="container">
+            <a href="http://outsourcing.createit.pl/">
+                <p class="ct-u-motiveDark ct-u-paddingBoth10 ct-u-size14 ct-fw-600">COPYRIGHT © createIT 2014</p>
+            </a>
+        </div>
+    </footer>
+
+    </div>
+
+    <!-- JavaScripts -->
+
+    <script src="{%static 'fishfarm/js/jquery.min.js'%}"></script>
+    <script src="{%static 'fishfarm/bootstrap/js/bootstrap.min.js'%}"></script>
+    <script src="{%static 'fishfarm/js/jquery.easing.1.3.js'%}"></script>
+    <script src="{%static 'fishfarm/js/device.min.js'%}"></script>
+    <script src="{%static 'fishfarm/js/jquery.browser.min.js'%}"></script>
+    <script src="{%static 'fishfarm/js/snap.min.js'%}"></script>
+    <script src="{%static 'fishfarm/js/jquery.appear.js'%}"></script>
+
+    <script src="{%static 'fishfarm/js/logos/logo-FISHtank.js'%}"></script>
+    <script src="{%static 'fishfarm/js/logos/logo-FISHtank.js'%}"></script>
+    <script src="{%static 'fishfarm/js/main.js'%}"></script>
+
+    <script src="{%static 'fishfarm/js/ct-mediaSection/jquery.stellar.min.js'%}"></script>
+    <script src="{%static 'fishfarm/js/ct-mediaSection/init.js'%}"></script>
+
+    <script src="{%static 'fishfarm/js/magnific-popup/jquery.magnific-popup.min.js'%}"></script>
+    <script src="{%static 'fishfarm/js/magnific-popup/init.js'%}"></script>
+
+    <script src="{%static 'fishfarm/js/flexslider/jquery.flexslider-min.js'%}"></script>
+    <script src="{%static 'fishfarm/js/flexslider/init.js'%}"></script>
+
+    <script src="{%static 'fishfarm/js/less.min.js'%}"></script>
+
+    <!-- switcher -->
+    <script src="{%static 'fishfarm/js/demo.js'%}"></script>
+    <script type="text/javascript">
+        $('head').append('<link rel="stylesheet" type="text/css" href="../demo/css/demo.css">');
+        $('head').append('<link rel="stylesheet" type="text/css" href="http://fishtank.html.themeplayers.net/demo/generator.php">');
+    </script>
+
+
+    <!--<link rel="stylesheet" type="text/css" href="../demo/css/demo.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="../demo/generator.php">-->
+
+    <!-- end switcher -->
+</body>
+
+<!-- Mirrored from fishtank.html.themeplayers.net/FISHtank/features-tables.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 May 2021 06:18:50 GMT -->
+
+</html>
